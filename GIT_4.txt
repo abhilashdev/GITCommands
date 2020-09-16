@@ -44,5 +44,3 @@ This will download only the modified files but it will merge them directly with 
 6 Open gitbash
 git pull
 Now the modified files can be see directly on the master
-
-test line added
