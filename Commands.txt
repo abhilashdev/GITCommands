@@ -1,0 +1,18 @@
+Git Merging
+=================
+Merging of a branch always happens based on the time stamp of the commits.
+
+Not a latest version
+
+a -> b->c ->D ->E
+master: a,b,E
+Child:C,D (latest code)
+
+Git Rebasing
+==================
+This is also called fast forward merge and here the commits coming from a branch will projected as the top most commits on the master branch.
+
+a -> b ->E ->c ->D
+master: a,b,E
+Child:C,D (latest)
+
