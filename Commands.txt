@@ -145,7 +145,6 @@ git merge test
 Git cherry pick
 =====================
 Both git merge and git rebase bring all the commits from a branch into the master branch.If we want to selectively pick up only certain commits and add them to the master branch then we can use cherry pick.
-<<<<<<< HEAD
 =======
 
 1 Create a commit on master
@@ -175,9 +174,3 @@ git log –oneline
 
 5 To cherry pick only c and e commits to master
 git checkout master
-<<<<<<< HEAD
-git cherry-pick c_commitid e_commitid
->>>>>>> d3fc3aa... Second Commmit on Cherry pick
-=======
-git cherry-pick c_commitid e_commitid
->>>>>>> d3fc3aa... Second Commmit on Cherry pick
