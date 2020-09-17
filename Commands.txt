@@ -175,5 +175,9 @@ git log –oneline
 
 5 To cherry pick only c and e commits to master
 git checkout master
+<<<<<<< HEAD
+git cherry-pick c_commitid e_commitid
+>>>>>>> d3fc3aa... Second Commmit on Cherry pick
+=======
 git cherry-pick c_commitid e_commitid
 >>>>>>> d3fc3aa... Second Commmit on Cherry pick
