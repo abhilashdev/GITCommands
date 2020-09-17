@@ -1,3 +1,123 @@
+Setting up username and email globally for all users on a specific machine
+================================================================
+
+git config –global user.name “sai krishna”
+git config –global user.email “intelliqittrainings@gmail.com”
+
+To see the list of configurations on git
+git config –global –list
+
+==============================================================================
+Local Repository is the location where version controlling happens and
+files present here are called as Commited files
+
+1 To initilise the current folder as a git repo
+  git init
+  Note: This will create a hidden folder called as .git which stores all
+  the configuration necessary for git to run.
+
+2 To send a file from working dir to stagging area
+  git add filename
+  To send multiple files to stagging area
+  git add file1 file2 file3
+  To send all the files and folders into the stagging area
+  git add .
+  Note  . represents present working directory
+
+3 To remove files from the stagging area and bring them back to 
+  untracked section
+  git rm --cached filename
+  (or)
+  git reset filename
+
+4 To send the files from the stagging area to the local repository
+  git commit -m "Some Message"
+
+5 To see the status of the files present in the untracked and stagging areas
+  git status
+
+6 To see the commit history of the local repository
+  git log
+  To see the commit history in short format
+  git log --oneline
+  
+  .gitignore
+==============
+This is a special configuration file which is sued for hiding
+private files from git.Any file whose name is mentioned in 
+.gitignore become unaccesble by git
+
+Uploading the code into github(Checkin)
+==============================================
+1 Signin int github.com
+2 Click on + on TopRight corner
+3 Click on New Repository
+4 Enter some reposiotry name--->Select Public or Private
+5 Click on Create repository
+6 Go to "push an exisiting reposiotry from command line"
+  Copy and paste the fitst command
+  This will create a link between the local and the remote repository
+  git remote add origin https://github.com/abhilashdev/GITCommands.git
+7 To upload the code
+  git push -u origin master
+  git push -u origin --all
+  Enter username and password of github
+
+Downloading the code from github
+================================================
+This can be done in 3 ways
+1 git clone
+2 git fetch
+3 git pull
+
+Downloading the code from the github
+===========================================
+This can be done in 3 ways
+1 git clone
+2 git fetch
+3 git pull
+
+git clone
+===========
+This will download all the code from the remote github into the local machine irresepective of whether that code is present on our machine or not.This is generally one time activity where a copy of the code has to be copied to all the team members machine
+
+Syntax:
+git clone remote_git_hub_url
+
+git fetch
+===============
+This will download only the modified files and place them on a seperate branch called as remote branch.We can go into this remote branch and check if the modifications are ok or not,If they are acceptable then we merge it with the master branch.
+
+1 Open github.com
+2 Go to the repository that we uploaded
+3 Select some file—>Click on Edit
+4 Make some changes to the files
+5 Click on Commit changes
+6 Open gitbash
+git fetch
+This will download only the modified files but it will not be visible on master.Instead it create a remote branch where these changes can be seen
+7 To see the list of all branches local and remote
+git branch -a
+8 Move into that remote branch
+git checkout remotes/origin/master
+9 View the changes and if they are acceptable merge it with master
+git checkout master
+git merge remotes/origin/master
+
+git pull
+=============
+This will download only the modified files but it will merge them directly with the master branch
+
+1 Open github.com
+2 Go to the repository that we uploaded
+3 Select some file—>Click on Edit
+4 Make some changes to the files
+5 Click on Commit changes
+6 Open gitbash
+git pull
+Now the modified files can be see directly on the master
+
+
 Git Merging
 =================
 Merging of a branch always happens based on the time stamp of the commits.
@@ -21,3 +141,7 @@ git checkout test
 git rebase master
 git checkout master
 git merge test
+
+Git cherry pick
+=====================
+Both git merge and git rebase bring all the commits from a branch into the master branch.If we want to selectively pick up only certain commits and add them to the master branch then we can use cherry pick.
