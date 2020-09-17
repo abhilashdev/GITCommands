@@ -16,3 +16,8 @@ a -> b ->E ->c ->D
 master: a,b,E
 Child:C,D (latest)
 
+Rebase test with master
+git checkout test
+git rebase master
+git checkout master
+git merge test
